@@ -8,4 +8,14 @@ $(document).ready(function () {
       $(this).text("☰");
     }
   });
+
+  $('#openModalBtn').click(function () {
+      $('#signInModal').fadeIn();
+    });
+
+    $('#closeModalBtn').click(function () {
+      $('#signInModal').fadeOut();
+    });
+
+
 });
