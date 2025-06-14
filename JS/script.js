@@ -16,6 +16,4 @@ $(document).ready(function () {
     $('#closeModalBtn').click(function () {
       $('#signInModal').fadeOut();
     });
-
-
 });
