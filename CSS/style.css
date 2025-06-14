@@ -1,3 +1,4 @@
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +9,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Navbar */
 .navbar {
-  background-color: #1F2937; /* dark slate */
+  background-color: #1F2937;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -17,6 +19,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  z-index: 10;
 }
 
 .logo {
@@ -39,7 +42,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #60A5FA; /* sky blue */
+  color: #60A5FA;
 }
 
 .signBtn {
@@ -47,15 +50,15 @@ body {
   width: 80px;
   border-radius: 5px;
   border: none;
-  background-color: #FACC15; /* yellow */
+  background-color: #FACC15;
   font-weight: bolder;
   font-size: 17px;
-  color: #1F2937; /* dark slate */
+  color: #1F2937;
 }
 
 .signBtn:hover {
-  background-color: #EAB308; /* darker yellow */
-  color: #0F172A; /* deeper dark */
+  background-color: #EAB308;
+  color: #0F172A;
   cursor: pointer;
 }
 
@@ -65,6 +68,7 @@ body {
   cursor: pointer;
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -101,7 +105,6 @@ body {
 
 .modal-content h2 {
   text-align: center;
-  align-content: center;
   margin-bottom: 20px;
 }
 
@@ -129,11 +132,10 @@ body {
   background-color: #2563EB;
 }
 
-
+/* Home Section */
 #home_section {
   height: 100vh;
   width: 100%;
-  /* background-image: url("../Images/Home.mp4"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -150,7 +152,6 @@ body {
   font-size: 3rem;
   font-weight: bold;
   margin-top: -100px;
-  /* margin-bottom: 1.5rem; */
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
@@ -175,7 +176,6 @@ body {
 .planBtn {
   background-color: #FACC15;
   color: #1F2937;
-  /* border: 2px solid #1F2937; */
 }
 
 .planBtn:hover {
@@ -186,26 +186,26 @@ body {
 .exploreBtn {
   background-color: #3B82F6;
   color: #ffffff;
-  /* border: 2px solid #FACC15; */
 }
 
 .exploreBtn:hover {
   background-color: #2563EB;
-  /* color: #FACC15; */
 }
 
+/* Destination Section */
 #destination_section {
-  height: 100vh;
   width: 100%;
-  background-color: #FDE68A; /* light yellow */
+  background-color: #1F2937;
 }
 
+/* Plan Section */
 #plan_section {
   height: 100vh;
-  background-color: #FCA5A5; /* soft coral pink */
+  background-color: #FCA5A5;
   width: 100%;
 }
 
+/* Video Section */
 .video-section {
   position: relative;
   height: 100vh;
@@ -219,10 +219,9 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
-
 
 .bg-video {
   position: absolute;
@@ -249,8 +248,56 @@ body {
   padding: 1rem;
 }
 
+/* Destination Cards */
+.destination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+}
 
-/* Responsive */
+.card {
+  height: 250px;
+  width: 360px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  position: relative;
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+}
+
+.card-content h3,
+.card-content p {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -259,7 +306,6 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 0;
     background-color: #1F2937;
     width: 100%;
     position: absolute;
@@ -298,15 +344,26 @@ body {
   }
 }
 
-.card {
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  margin: 10px;
-  padding: 20px;
-  color: white;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+@media (max-width: 1024px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .destination {
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    height: auto;
+    gap: 1rem;
+  }
 }
