@@ -42,11 +42,45 @@
     </section>
 
     <section id="destination_section">
-      <div class="destination">
-      </div>
+      <div class="destination"></div>
     </section>
 
-    <section id="plan_section"></section>
+    <section id="plan_section">
+      <h2>Plan Your Trip 📅</h2>
+      <div class="plan_container">
+        <div class="plan_img"></div>
+        <div class="plan_form">
+          <form action="" method="post" id="trip_form">
+            <div class="input">
+              <label for="destinationList">Choose Destination: </label>
+              <select name="destinationList" id="destinationList">
+                <option value="gatewayOfIndia">Gateway Of India</option>
+                <option value="ajantaCaves">Ajanta Caves</option>
+                <option value="lonavala">Lonavala</option>
+                <option value="nashik">Nashik</option>
+                <option value="alibaug">Alibaug</option>
+                <option value="matheran">Matheran</option>
+                <option value="pune">Pune</option>
+                <option value="mahabaleshwar">Mahabaleshwar</option>
+              </select>
+            </div>
+            <div class="input">
+              <label for="startDate">Start Date: </label>
+              <input type="date" name="startDate" id="startDate">
+            </div>
+            <div class="input">
+              <label for="endDate">End Date: </label>
+              <input type="date" name="endDate" id="endDate">
+            </div>
+            <div class="input">
+              <label for="travelers">Number of Travelers: </label>
+              <input type="number" name="travelers" id="travelers" min="1">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <div class="modal" id="signInModal">
       <div class="modal-content">
